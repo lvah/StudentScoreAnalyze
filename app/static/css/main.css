@@ -1,0 +1,8 @@
+.navbar {
+    font-size: 130%;
+    background: whitesmoke;
+    margin-top: 10px;
+    padding-top: 5px;
+    box-shadow: 2px 2px 2px 2px lightgray;
+    height: 60px;
+}

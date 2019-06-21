@@ -1,0 +1,13 @@
+Flask==1.0.2
+Flask-Bootstrap==3.3.7.1
+Flask-Cors==3.0.7
+Flask-Migrate==2.5.2
+Flask-Moment==0.7.0
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.4.0
+Flask-WTF==0.14.2
+pyecharts==1.2.0
+pyecharts-javascripthon==0.0.6
+pyecharts-jupyter-installer==0.0.3
+pyecharts-snapshot==0.2.0
+PyMySQL==0.9.3

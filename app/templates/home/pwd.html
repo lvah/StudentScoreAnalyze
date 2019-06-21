@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+{% import 'bootstrap/wtf.html'  as wtf %}
+
+{% block title %}
+
+    修改密码
+{% endblock %}
+
+
+{% block content %}
+
+
+
+        {#  右侧用户中心       #}
+        <div class="col-lg-11">
+            {#   面板中心          #}
+            <div class="panel panel-warning">
+                {#   面板头部              #}
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-lock"></span>&nbsp;修改密码
+                    </h3>
+                </div>
+                {#   面板主体               #}
+                <div class="panel-body">
+                    {{ wtf.quick_form(form) }}
+                </div>
+            </div>
+
+        </div>
+
+
+{% endblock %}
+
+

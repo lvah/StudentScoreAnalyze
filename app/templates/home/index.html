@@ -1,0 +1,66 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    主页
+{% endblock %}
+{% block content %}
+
+    <div class="col-lg-10 col-lg-offset-1" style="padding-top: 100px">
+        <!--work progress start-->
+        <section class="panel">
+            <div class="panel-body progress-panel">
+                <div class="task-progress">
+                    <h1>已上传班级信息</h1>
+                    <p></p>
+                </div>
+            </div>
+            <table class="table table-hover personal-task">
+                <tbody>
+
+
+                <tr>
+                    <td>序号</td>
+                    <td>
+                        班级名称
+                    </td>
+                    <td>
+                        班级人数
+                    </td>
+                    <td>
+                        下载源文件
+                    </td>
+                </tr>
+                {% if grades %}
+                    {% for grade in grades %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>
+                                {{ grade.0 }}
+                            </td>
+                            <td>
+                                <span class="badge bg-important">{{ grade.1 }}人</span>
+                            </td>
+                            <td>
+                                <a href="/download/{{ grade.2 }}/">
+                                    <span class="icon-download-alt bg-info">  </span>
+                                </a>
+
+
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                {% else %}
+                    未上传任何班级信息
+
+                {% endif %}
+
+                </tbody>
+            </table>
+        </section>
+        <!--work progress end-->
+    </div>
+
+
+{% endblock %}
+

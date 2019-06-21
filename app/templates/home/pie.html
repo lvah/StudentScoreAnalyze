@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    效果展示图
+{% endblock %}
+{% block content %}
+    <div id="bar" style="width:1000px; height:600px;"></div>
+{% endblock %}
+
+
+{% block  scripts %}
+    {{ super() }}
+
+    <script>
+        $(
+            function () {
+                var chart = echarts.init(document.getElementById('bar'), 'white', {renderer: 'canvas'});
+                $.ajax({
+                    type: "GET",
+                    url: "http://127.0.0.1:5000/pie/",
+                    dataType: 'json',
+                    success: function (result) {
+                        chart.setOption(result);
+                    }
+                });
+            }
+        )
+    </script>
+
+{% endblock %}

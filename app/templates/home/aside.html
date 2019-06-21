@@ -1,0 +1,38 @@
+<!--sidebar start-->
+<aside style="margin-right: 100px">
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a class="" href="{{ url_for('home.index') }}">
+                    <i class="icon-dashboard"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="" href="{{ url_for('home.upload') }}">
+                    <i class="icon-tasks"></i>
+                    <span>上传数据</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="">
+                    <i class="icon-book"></i>
+                    <span>统计分析总览</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul>
+                    <li><a class="" href="{{ url_for('home.analyze', element='avg') }}">平均学分绩点</a></li>
+                    <li><a class="" href="{{ url_for('home.analyze', element='sum') }}">学分绩点总和</a></li>
+                    <li><a class="" href={{ url_for('home.analyze', element='wsum') }}>学分加权平均分</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->

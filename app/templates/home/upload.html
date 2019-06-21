@@ -1,0 +1,42 @@
+{% extends 'home/base.html' %}
+{% import 'bootstrap/wtf.html'  as wtf %}
+
+{% block title %}
+
+    上传文件
+{% endblock %}
+
+
+{% block content %}
+    <div class="container" style="padding-top: 100px">
+
+    <div class="row">
+        <div class="col-lg-12">
+            {#让每个页面都可以获取闪现信息闪现#}
+            {% for item in get_flashed_messages() %}
+
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    {{ item }}
+                </div>
+            {% endfor %}
+            <section class="panel">
+                <header class="panel-heading">
+                    上传文件
+                </header>
+
+                <div class="panel-body">
+                    {{ wtf.quick_form(form) }}
+                </div>
+
+            </section>
+
+
+        </div>
+    </div>
+
+{% endblock %}
+
+
+

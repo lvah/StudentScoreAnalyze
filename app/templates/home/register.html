@@ -1,0 +1,59 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html'  as wtf %}
+{% block doc %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Mosaddek">
+        <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+        <link rel="shortcut icon" href="img/favicon.html">
+
+        <title>成绩可视化系统-注册</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/bootstrap-reset.css" rel="stylesheet">
+        <!--external css-->
+        <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <!-- Custom styles for this template -->
+        <link href="/static/css/style.css" rel="stylesheet">
+        <link href="/static/css/style-responsive.css" rel="stylesheet"/>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+        <!--[if lt IE 9]>
+    <script src="/static/js/html5shiv.js"></script>
+    <script src="/static/js/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+    <body class="login-body">
+
+    <div class="container">
+
+
+        <form class="form-signin" action="{{ url_for('home.register') }}" method="post">
+            <h2 class="form-signin-heading">成绩可视化系统注册 &nbsp;&nbsp;<span class="label label-info"><a
+                    href="{{ url_for('home.login') }}">请登录</a></span></h2>
+            <div class="login-wrap">
+                {#让每个页面都可以获取闪现信息闪现#}
+                {% for item in get_flashed_messages() %}
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        {{ item }}
+                    </div>
+                {% endfor %}
+                {{ wtf.quick_form(form) }}
+            </div>
+
+        </form>
+
+    </div>
+
+
+    </body>
+    </html>
+{% endblock %}
